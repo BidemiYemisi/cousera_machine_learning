@@ -26,11 +26,11 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 % 
   
-mu = mean(X);  % mean of each fetaure, this gives 1 X 2 matrix for the two features i.e each feature is a column of the matrix
+mu = mean(X);  % mean of each fetaure, this gives a matrix for the two features i.e each feature is a column of the matrix
 %f1mean = X(:,1) - mu(:,1);
 %f2mean = X(:,2) - mu(:, 2);
 
-sigma = std(X); % standard deviation for each feature, this give a 1 X 2 matrix for the two features
+sigma = std(X); % standard deviation for each feature, this give a matrix for the two features
 
 %f1std = f1mean/sigma(:,1);
 %f2std = f2mean/sigma(:,2);

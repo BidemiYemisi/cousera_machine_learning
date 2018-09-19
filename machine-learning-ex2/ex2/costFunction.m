@@ -19,13 +19,21 @@ grad = zeros(size(theta));
 %
 % Note: grad should have the same dimensions as theta
 %
-h = sigmoid(X * theta);  % calculates the hypothesis i.e y (predicted).
-cost = sum(-y .* log(h) - (1 - y) .* log(1 - h));
-grad = X' * (h - y);
+% Cost function calculation
+%h = sigmoid(X * theta);  % calculates the hypothesis i.e y (predicted) which is h=g(X*theta).
+%cost = sum(-y .* log(h) - (1 - y) .* log(1 - h));
+%J = cost / m;
 
-% You need to return the following variables correctly
-J = cost / m;
-grad = grad / m;
+J = (1/m)*(-y'* log(h) - (1 - y)'* log(1-h));
+
+
+% Gradient decent calculation
+%grad = X' * (h - y);
+%grad = grad / m;
+
+grad = (1/m)*X'*(h - y);
+
+
 
 
 

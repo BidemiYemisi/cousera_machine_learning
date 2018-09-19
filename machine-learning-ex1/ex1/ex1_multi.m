@@ -87,7 +87,7 @@ num_iters = 400;
 
 % Init Theta and Run Gradient Descent 
 theta = zeros(3, 1);
-[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters)
 
 % Plot the convergence graph
 figure;
@@ -151,8 +151,11 @@ fprintf('\n');
 
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
-learning_set = [1 1650 3]'; % written as learning_set = [1; 1650; 3]
-price = theta' * learning_set;
+learning_set = [1 1650 3]'; % written as learning_set = [1; 1650; 3]. Transposed because we need data in rowslike [x0]
+																												% [x1]
+% we transpose theta here because the normal equation returned theta in columns not row but we need data in rows like [theta1]		
+																											 %        [theta2]
+price = theta' * learning_set; 
 
 
 % ============================================================
